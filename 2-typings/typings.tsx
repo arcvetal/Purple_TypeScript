@@ -1,8 +1,9 @@
 'use strict';
-
+// можно не типпизировать
 var makeOrdinal = require('./makeOrdinal');
 var isFinite = require('./isFinite');
 var isSafeNumber = require('./isSafeNumber');
+
 
 const enum EDecimal {
   TEN = 10,
@@ -24,6 +25,7 @@ const TENTHS_LESS_THAN_HUNDRED: readonly string[] = [
   'zero', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'
 ]
 
+
 function toWords(number: string , asOrdinal: boolean): string {
   var words: string;
   var num = parseInt(number, 10);
@@ -41,8 +43,6 @@ function toWords(number: string , asOrdinal: boolean): string {
   words = generateWords(num);
   return asOrdinal ? makeOrdinal(words) : words;
 }
-
-
 
 
 function generateWords(number: number, words?: string[]): string {
